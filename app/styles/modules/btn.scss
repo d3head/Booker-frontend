@@ -20,7 +20,7 @@
 
   &.active,
   &:active {
-    background: rgb(0, 0, 0);
+    background: rgb( 17, 17, 17 );
     color: rgb(255, 255, 255);
 
     box-shadow: none;
@@ -33,7 +33,7 @@
   &:hover,
   &:focus {
     border: 0;
-    background: rgb(0, 0, 0);
+    background: rgb( 17, 17, 17 );
     color: rgb(255, 255, 255);
   }
 }

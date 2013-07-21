@@ -68,6 +68,15 @@ input {
 
   .search {
     margin-top: 70px;
+
+    .search-query {
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: 300;
+      font-size: 20px;
+      
+      @include serif();
+    }
   }
 }
 
