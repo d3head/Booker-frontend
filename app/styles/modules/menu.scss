@@ -1,0 +1,49 @@
+@import "mixins";
+
+.menu {
+  background: rgb( 17, 17, 17 );
+  position: fixed;
+  left: -300px;
+  width: 240px;
+  height: 100%;
+  padding: 20px 30px;
+  @include transition( all, .3s, ease );
+
+  &.active {
+    left: 0;
+  }
+
+  .menu-header {
+    padding-top: 30px;
+
+    a {
+      border-bottom: 1px solid rgb(68, 68, 68);
+      padding: 1em 0;
+      display: block;
+      color: rgb(179, 179, 177);
+      font-size: 1.1em;
+      font-weight: 300;
+
+      &:hover {
+        color: rgb( 255, 255, 255 );
+      }
+    }
+  }
+
+  .menu-footer {
+    position: absolute;
+    bottom: 40px;
+
+    font-size: .9em;
+    color: rgb(163, 163, 163);
+
+    a {
+      color: rgb(201, 201, 201);
+      border-bottom: 1px solid;
+
+      &:hover {
+        border: 0;
+      }
+    }
+  }
+}

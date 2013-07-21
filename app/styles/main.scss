@@ -1,4 +1,154 @@
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+@import "modules/mixins";
+@import "modules/menu";
+@import "modules/btn";
+
+a {
+  color: #111;
+
+  @include transition( all, .5s, ease );
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid;
+  }
+}
+
+input {
+  box-shadow: none !important;
+}
+
+.menu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+  @include transition( all, .3s, ease );
+
+  &.active {
+    left: 280px;
+  }
+}
+
+.bookerTitle {
+  @include serif();
+
+  font-size: 2em;
+  font-weight: 300;
+  color: rgb( 255, 255, 255 );
+
+  &:hover {
+    color: rgb( 255, 255, 255 );
+  }
+}
+
+.splash {
+  background: rgb(0, 174, 239);
+  color: rgb(255, 255, 255);
+  padding: 100px 0 30px 0;
+  @include serif( );
+
+  text-align: center;
+
+  .title {
+    font-size: 100px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+
+    text-align: center;
+    line-height: 80px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .subtitle {
+    font-size: 32px;
+    font-weight: 300;
+
+    text-align: center;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .search {
+    margin-top: 70px;
+  }
+}
+
+.statistics {
+  text-align: center;
+  margin-top: 10px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(238, 238, 238);
+
+  h2 {
+    font-size: 50px;
+  }
+
+  p {
+    color: rgb(170, 170, 170);
+    font-size: .9em;
+  }
+}
+
+.books {
+  padding: 20px 0;
+
+  .book {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .book-image {
+    display: inline-block;
+    height: 200px;
+    width: 150px;
+    vertical-align: top;
+    background: rgb(52, 73, 94);
+  }
+
+  .book-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    
+    max-width: 800px;
+  }
+
+  .book-title {
+    font-size: 32px;
+    margin: 0;
+    line-height: 25px;
+
+    @include sans-serif();
+  }
+
+  .book-meta {
+    color: rgb(179, 179, 177);
+    font-weight: 300;
+    @include serif();
+
+    a {
+      color: rgb(179, 179, 177);
+    }
+  }
+
+  .book-description {
+    font-weight: 400;
+    font-size: 18px;
+    color: rgb(51, 51, 50);
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    @include serif();
+  }
+
+  .book-download {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      line-height: 30px;
+    }
+  }
 }

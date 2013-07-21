@@ -7,7 +7,9 @@
     "angular-resource": "~1.0.7",
     "angular-cookies": "~1.0.7",
     "angular-sanitize": "~1.0.7",
-    "jquery": "~1.9.1"
+    "jquery": "~1.9.1",
+    "classie": "https://github.com/desandro/classie.git",
+    "font-awesome": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",

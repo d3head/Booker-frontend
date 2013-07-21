@@ -1,27 +1,57 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Booker.am</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Booker.am</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-    <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,900|Roboto+Slab:400,300,700&subset=latin,cyrillic">
+
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
   </head>
-  <body ng-app="bookerApp">
+  <body class="menu-push" ng-app="bookerApp">
+    <nav class="menu" id="bookerMenu">
+      <header class="menu-header">
+        <a href="#">Books</a>
+        <a href="#">Authors</a>
+        <a href="#">Categories</a>
+      </header>
+      <footer class="menu-footer">
+        <!-- <input type="text" ng-model="{user.email}" ng-show="{user.email}"> -->
+        <!-- <span class="user-email" ng-model="{user.email}" ng-show="{user.email}"></span> -->
+        <div class="links">
+          <p>Made by <a href="//theaqua.im">theaqua</a> and <a href="//oleg.so">d3head</a>.</p>
+          <p>Also available on <a href="//github.com/theaqua/Booker">GitHub</a>.</p>
+        </div>
+      </footer>
+    </nav>
+    <a href="#" class="btn btn-large btn-bookerMenu" id="bookerMenuButton">B<span>ooker</span></a>
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="splash">
+      <div class="container">
+      <h1 class="title">Hello!</h1>
+      <h3 class="subtitle">Welcome to Booker.am</h3>
+
+      <div class="search">
+        <input type="search" class="search-query input-xxlarge" placeholder="Search">
+      </div>
+      </div>
+    </div>
+
+    <div ng-view></div>
 
     <!-- build:js scripts/vendor/jquery.min.js -->
     <script src="components/jquery/jquery.js"></script>
+    <script src="components/classie/classie.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/angular.min.js -->
@@ -42,5 +72,5 @@
     <script src="scripts/controllers/authorsController.js"></script>
     <script src="scripts/controllers/categoriesController.js"></script>
     <!-- endbuild -->
-    </body>
+  </body>
 </html>

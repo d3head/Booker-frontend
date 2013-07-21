@@ -1,0 +1,70 @@
+@import "mixins";
+
+.btn-bookerMenu {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  background: rgb( 17, 17, 17 );
+
+  color: rgb( 255, 255, 255 );
+  border-radius: 0;
+  text-shadow: none;
+  border: 0;
+  @include serif();
+  @include transition( all, .3s, ease );
+
+  span {
+    display: none;
+  }
+
+  &.active,
+  &:active {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    box-shadow: none;
+
+    span {
+      display: inline;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border: 0;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+}
+
+.btn {
+  color: white;
+  border: 0;
+  border-radius: 0;
+  text-shadow: none;
+
+  @include serif();
+
+  &.btn-blue {
+    background: rgb(0, 174, 239);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+      background: rgb(131, 205, 255);
+    }
+  }
+
+
+  &.btn-download {
+    padding: 10px;
+  }
+}
+
+a.btn {
+  border: 0;
+
+  &:hover {
+    border: 0;
+  }
+}

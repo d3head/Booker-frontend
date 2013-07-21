@@ -3,7 +3,7 @@
 describe 'Controller: CategoriescontrollerCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'BookerApp'
+  beforeEach module 'bookerApp'
 
   CategoriescontrollerCtrl = {}
   scope = {}

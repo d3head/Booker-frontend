@@ -1,7 +1,7 @@
 'use strict'
 
-angular.module('BookerApp')
-  .controller 'CategoriescontrollerCtrl', ($scope) ->
+angular.module('bookerApp')
+  .controller 'CategoriesCtrl', ($scope) ->
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
