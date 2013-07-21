@@ -124,6 +124,18 @@ input {
     font-weight: 300;
     @include serif();
 
+    .tags {
+      &:after {
+        content: ", ";
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+
     a {
       color: rgb(179, 179, 177);
     }
@@ -149,6 +161,7 @@ input {
     li {
       display: inline-block;
       line-height: 30px;
+      margin-right: 10px;
     }
   }
 }
