@@ -6,7 +6,7 @@
   left: -300px;
   width: 240px;
   height: 100%;
-  padding: 20px 30px;
+  padding: 40px 20px 40px 40px;
   @include transition( all, .3s, ease );
 
   &.active {

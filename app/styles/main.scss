@@ -2,6 +2,14 @@
 @import "modules/menu";
 @import "modules/btn";
 
+body {
+  top: -290px;
+
+  &.first-visit {
+    top: 0;
+  }
+}
+
 a {
   color: #111;
 
@@ -43,7 +51,35 @@ input {
 .splash {
   background: rgb(0, 174, 239);
   color: rgb(255, 255, 255);
-  padding: 100px 0 30px 0;
+  padding: 100px 0 30px 0; 
+  text-shadow: rgb(0, 157, 215) 1px 1px,
+    rgb(0, 158, 216) 2px 2px,
+    rgb(0, 158, 217) 3px 3px,
+    rgb(0, 159, 218) 4px 4px,
+    rgb(0, 160, 219) 5px 5px,
+    rgb(0, 160, 220) 6px 6px,
+    rgb(0, 161, 221) 7px 7px,
+    rgb(0, 162, 222) 8px 8px,
+    rgb(0, 162, 223) 9px 9px,
+    rgb(0, 163, 223) 10px 10px,
+    rgb(0, 163, 224) 11px 11px,
+    rgb(0, 164, 225) 12px 12px,
+    rgb(0, 165, 226) 13px 13px,
+    rgb(0, 165, 227) 14px 14px,
+    rgb(0, 166, 228) 15px 15px,
+    rgb(0, 167, 229) 16px 16px,
+    rgb(0, 167, 230) 17px 17px,
+    rgb(0, 168, 231) 18px 18px,
+    rgb(0, 168, 231) 19px 19px,
+    rgb(0, 169, 232) 20px 20px,
+    rgb(0, 170, 233) 21px 21px,
+    rgb(0, 170, 234) 22px 22px,
+    rgb(0, 171, 235) 23px 23px,
+    rgb(0, 172, 236) 24px 24px,
+    rgb(0, 172, 237) 25px 25px,
+    rgb(0, 173, 238) 26px 26px,
+    rgb(0, 174, 239) 27px 27px;
+
   @include serif( );
 
   text-align: center;
@@ -55,7 +91,6 @@ input {
 
     text-align: center;
     line-height: 80px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .subtitle {
@@ -63,7 +98,6 @@ input {
     font-weight: 300;
 
     text-align: center;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .search {
