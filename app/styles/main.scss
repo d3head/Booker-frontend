@@ -2,13 +2,13 @@
 @import "modules/menu";
 @import "modules/btn";
 
-body {
-  top: -290px;
+// body {
+//   margin-top: -290px;
 
-  &.first-visit {
-    top: 0;
-  }
-}
+//   &.first-visit {
+//     margin-top: 0;
+//   }
+// }
 
 a {
   color: #111;
@@ -114,27 +114,11 @@ input {
   }
 }
 
-.statistics {
-  text-align: center;
-  margin-top: 10px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgb(238, 238, 238);
-
-  h2 {
-    font-size: 50px;
-  }
-
-  p {
-    color: rgb(170, 170, 170);
-    font-size: .9em;
-  }
-}
-
 .books {
   padding: 20px 0;
 
   .book {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     position: relative;
   }
 

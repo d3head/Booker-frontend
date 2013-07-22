@@ -1,26 +1,3 @@
-<div class="statistics">
-  <div class="container">
-    <div class="row">
-      <div class="span3">
-        <h2>+5</h2>
-        <p>books today</p>
-      </div>
-      <div class="span3">
-        <h2>217</h2>
-        <p>books</p>
-      </div>
-      <div class="span3">
-        <h2>2,170</h2>
-        <p>authors</p>
-      </div>
-      <div class="span3">
-        <h2>217</h2>
-        <p>tags</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="books" ng-controller="BooksCtrl">
   <div class="container">
     <ul class="unstyled">
@@ -37,7 +14,7 @@
         <div class="book-info">
           <h2 class="book-title">{{book.title}}</h2>
           <h5 class="book-meta">
-            <span>by <a href="">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a href="/categories/{{tag}}">{{tag}}</a></span>
+            <span>by <a ng-href="#/authors/{{book.author}}">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a ng-href="#/categories/{{tag}}">{{tag}}</a></span>
           </h5>
 
           <blockquote class="book-description">{{book.description}}</blockquote>

@@ -1,2 +1,5 @@
-<div class="books" ng-controller="CategoriesCtrl">
+<div class="books" ng-controller="BooksCtrl">
+  <span ng-repeat="book in books">
+    <span ng-repeat="tag in book.tags">{{tag}}</span>
+  </span>
 </div>

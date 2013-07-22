@@ -30,6 +30,22 @@
     }
   }
 
+  .menu-stats {
+    margin-top: 10px;
+    padding: 20px 0;
+
+    h2 {
+      color: rgb(238, 238, 238);
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    small {
+      font-size: 14px;
+      vertical-align: middle;
+    }
+  }
+
   .menu-footer {
     position: absolute;
     bottom: 0;
