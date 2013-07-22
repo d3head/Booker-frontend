@@ -1,9 +1,12 @@
 'use strict'
 
-angular.module('bookerApp')
-  .controller 'AuthorsCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ]
+angular.module( 'bookerApp' )
+  .controller 'AuthorsCtrl', ( $scope, $http ) ->
+    $http.get( booker.api.authors )
+      .success(( data ) ->
+        $scope.authors = data
+      )
+      .error(( data ) ->
+        $scope.authors = data
+        console.log data
+      )
