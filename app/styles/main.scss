@@ -109,7 +109,23 @@ input {
     height: 200px;
     width: 150px;
     vertical-align: top;
-    background: rgb(52, 73, 94);
+    background: rgb(181, 34, 9);
+    color: rgb(255, 255, 255);
+    box-shadow: -10px 10px 0px rgb(238, 238, 238);
+    @include serif();
+
+    .book-iauthor {
+      margin: 20px 0px 45px 20px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 300;
+    }
+
+    .book-ititle {
+      margin: 0 20px;
+      font-size: 25px;
+      font-weight: 700;
+    }
   }
 
   .book-info {

@@ -25,7 +25,14 @@
   <div class="container">
     <ul class="unstyled">
       <li class="book" ng-repeat="book in books">
-        <img src="" alt="" class="book-image">
+        <div class="book-image">
+          <h3 class="book-iauthor">
+            {{book.author}}
+          </h3>
+          <div class="book-ititle">
+            {{book.title}}
+          </div>
+        </div>
 
         <div class="book-info">
           <h2 class="book-title">{{book.title}}</h2>
