@@ -19,39 +19,37 @@
   <!-- endbuild -->
   </head>
   <body class="menu-push" ng-app="bookerApp">
-    <nav class="menu" id="bookerMenu">
-      <header class="menu-header">
-        <a ng-href="#/books">Books</a>
-        <a ng-href="#/authors">Authors</a>
-        <a ng-href="#/categories">Categories</a>
-      </header>
+    <div ng-controller="BookerCtrl">
+      <nav class="menu" id="bookerMenu">
+        <header class="menu-header">
+          <a ng-href="#/books">Books</a>
+          <a ng-href="#/authors">Authors</a>
+        </header>
 
-      <div class="menu-stats">
-        <h2>+5 <small>books today</small></h2>
-        <h2>217 <small>books</small></h2>
-        <h2>2,170 <small>authors</small></h2>
-        <h2>217 <small>tags</small></h2>
-      </div>
-
-      <footer class="menu-footer">
-        <!-- <input type="text" ng-model="{user.email}" ng-show="{user.email}"> -->
-        <!-- <span class="user-email" ng-model="{user.email}" ng-show="{user.email}"></span> -->
-        <div class="links">
-          <p>Made by <a href="//theaqua.im">theaqua</a> and <a href="//oleg.so">d3head</a>.</p>
-          <p>Also available on <a href="//github.com/theaqua/Booker">GitHub</a>.</p>
+        <div class="menu-stats">
+          <h2>+5 <small>books today</small></h2>
+          <h2>217 <small>books</small></h2>
+          <h2>2,170 <small>authors</small></h2>
+          <h2>217 <small>tags</small></h2>
         </div>
-      </footer>
-    </nav>
-    <a href="#" class="btn btn-large btn-bookerMenu" id="bookerMenuButton">B</a>
+
+        <footer class="menu-footer">
+          <!-- <input type="text" ng-model="{user.email}" ng-show="{user.email}"> -->
+          <!-- <span class="user-email" ng-model="{user.email}" ng-show="{user.email}"></span> -->
+          <div class="links">
+            <p>Made by <a href="//theaqua.im">theaqua</a> and <a href="//oleg.so">d3head</a>.</p>
+            <p>Also available on <a href="//github.com/theaqua/Booker">GitHub</a>.</p>
+          </div>
+        </footer>
+      </nav>
+      <a href="" class="btn btn-large btn-bookerMenu" id="bookerMenuButton">B</a>
+    </div>
 
     <div class="splash">
       <div class="container">
-      <h1 class="title">Hello!</h1>
-      <h3 class="subtitle">Welcome to Booker.am</h3>
-
-      <div class="search">
-        <input type="search" class="search-query input-xxlarge" placeholder="Search">
-      </div>
+        <div class="search">
+          <input type="search" class="search-query input-xxlarge" placeholder="Search">
+        </div>
       </div>
     </div>
 
@@ -78,7 +76,6 @@
     <script src="scripts/controllers/bookerController.js"></script>
     <script src="scripts/controllers/booksController.js"></script>
     <script src="scripts/controllers/authorsController.js"></script>
-    <script src="scripts/controllers/categoriesController.js"></script>
     <!-- endbuild -->
   </body>
 </html>

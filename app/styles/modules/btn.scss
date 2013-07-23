@@ -1,3 +1,4 @@
+@import "variables";
 @import "mixins";
 
 .btn-bookerMenu {
@@ -11,7 +12,7 @@
   border-radius: 0;
   text-shadow: none;
   border: 0;
-  @include serif();
+  font-family: $serif;
   @include transition( all, .3s, ease );
 
   span {
@@ -44,7 +45,7 @@
   border-radius: 0;
   text-shadow: none;
 
-  @include serif();
+  font-family: $serif;
 
   &.btn-blue {
     background: rgb(0, 174, 239);

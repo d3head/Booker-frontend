@@ -1,14 +1,4 @@
-/*
- * https://github.com/thesedays/scss-mixins
- *
- * Apply a CSS3 transition
- *
- * $property The property you want to animate, eg opacity
- * $duration The duration of the animation, eg 1s
- * $ms Include -ms-transition; default is false because IE does not support transitionEnd callback
- *
- * @include transition(opacity, 0.5s);
- */
+@import "variables";
 
 @mixin transition( $property, $duration, $easing:ease-in-out, $delay:false ) {
   transition: $property $duration $easing;
@@ -16,12 +6,4 @@
   @if( $delay ) {
     transition-delay: $delay;
   }
-}
-
-@mixin serif( ) {
-  font-family: "Roboto Slab", Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-@mixin sans-serif( ) {
-  font-family: "Roboto", Arial, serif;
 }
