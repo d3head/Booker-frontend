@@ -90,7 +90,7 @@ input {
     text-shadow: 0 1px 0px rgb(17, 17, 17);
 
     .book-iauthor {
-      margin: 20px 0px 45px 20px;
+      margin: 20px 20px 0;
       font-size: 20px;
       line-height: 24px;
       font-weight: 300;
@@ -100,6 +100,8 @@ input {
       margin: 0 20px;
       font-size: 25px;
       font-weight: 700;
+      position: absolute;
+      bottom: 75px;
     }
   }
 
