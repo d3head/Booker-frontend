@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,900|Roboto+Slab:400,300,700&subset=latin,cyrillic">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,500,900|Roboto+Slab:400,300,700&subset=latin,cyrillic">
 
   <!-- build:css({.tmp,app}) styles/main.css -->
   <link rel="stylesheet" href="styles/bootstrap.min.css">
@@ -26,11 +26,11 @@
           <a ng-href="#/authors">Authors</a>
         </header>
 
-        <div class="menu-stats">
-          <h2>+5 <small>books today</small></h2>
-          <h2>217 <small>books</small></h2>
-          <h2>2,170 <small>authors</small></h2>
-          <h2>217 <small>tags</small></h2>
+        <div class="menu-stats" ng-controller="StatsCtrl">
+          <h2>+{{stats.addedToday}} <small>books today</small></h2>
+          <h2>{{stats.books}} <small>books</small></h2>
+          <h2>{{stats.authors}} <small>authors</small></h2>
+          <h2>{{stats.tags}} <small>tags</small></h2>
         </div>
 
         <footer class="menu-footer">
@@ -73,10 +73,11 @@
     <!-- build:js({.tmp,app}) scripts/main.js -->
     <script src="scripts/booker.js"></script>
     <script src="scripts/booker_routes.js"></script>
-    <script src="scripts/controllers/bookerController.js"></script>
-    <script src="scripts/controllers/booksController.js"></script>
-    <script src="scripts/controllers/authorsController.js"></script>
-    <script src="scripts/controllers/categoriesController.js"></script>
+    <script src="scripts/controllers/booker.js"></script>
+    <script src="scripts/controllers/books.js"></script>
+    <script src="scripts/controllers/authors.js"></script>
+    <script src="scripts/controllers/categories.js"></script>
+    <script src="scripts/controllers/stats.js"></script>
     <!-- endbuild -->
   </body>
 </html>
