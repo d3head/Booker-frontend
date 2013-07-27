@@ -38,12 +38,12 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       compass: {
-          files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-          tasks: ['compass:server', 'autoprefixer' ]
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['compass:server', 'autoprefixer' ]
       },
       styles: {
-          files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-          tasks: ['copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+        tasks: ['copy:styles', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -142,38 +142,38 @@ module.exports = function (grunt) {
       }
     },
     compass: {
+      options: {
+        sassDir: '<%= yeoman.app %>/styles',
+        cssDir: '.tmp/styles',
+        generatedImagesDir: '.tmp/images/generated',
+        imagesDir: '<%= yeoman.app %>/images',
+        javascriptsDir: '<%= yeoman.app %>/scripts',
+        fontsDir: '<%= yeoman.app %>/styles/fonts',
+        importPath: '<%= yeoman.app %>/components',
+        httpImagesPath: '/images',
+        httpGeneratedImagesPath: '/images/generated',
+        httpFontsPath: '/styles/fonts',
+        relativeAssets: false
+      },
+      dist: {},
+      server: {
         options: {
-            sassDir: '<%= yeoman.app %>/styles',
-            cssDir: '.tmp/styles',
-            generatedImagesDir: '.tmp/images/generated',
-            imagesDir: '<%= yeoman.app %>/images',
-            javascriptsDir: '<%= yeoman.app %>/scripts',
-            fontsDir: '<%= yeoman.app %>/styles/fonts',
-            importPath: '<%= yeoman.app %>/components',
-            httpImagesPath: '/images',
-            httpGeneratedImagesPath: '/images/generated',
-            httpFontsPath: '/styles/fonts',
-            relativeAssets: false
-        },
-        dist: {},
-        server: {
-            options: {
-                debugInfo: true
-            }
+          debugInfo: true
         }
+      }
     },
     autoprefixer: {
-        options: {
-            browsers: ['last 1 version']
-        },
-        dist: {
-            files: [{
-                expand: true,
-                cwd: '.tmp/styles/',
-                src: '{,*/}*.css',
-                dest: '.tmp/styles/'
-            }]
-        }
+      options: {
+        browsers: ['last 1 version']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: '{,*/}*.css',
+          dest: '.tmp/styles/'
+        }]
+      }
     },
     // not used since Uglify task does concat,
     // but still available if needed
@@ -219,19 +219,19 @@ module.exports = function (grunt) {
       // By default, your `index.html` <!-- Usemin Block --> will take care of
       // minification. This option is pre-configured if you do not wish to use
       // Usemin blocks.
-      // dist: {
-      //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
-      //       '.tmp/styles/{,*/}*.css',
-      //       '<%= yeoman.app %>/styles/{,*/}*.css'
-      //     ]
-      //   }
-      // }
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/styles/main.css': [
+            '.tmp/styles/{,*/}*.css',
+            '<%= yeoman.app %>/styles/{,*/}*.css'
+          ]
+        }
+      }
     },
     htmlmin: {
       dist: {
         options: {
-          /*removeCommentsFromCDATA: true,
+          removeCommentsFromCDATA: true,
           // https://github.com/yeoman/grunt-usemin/issues/44
           //collapseWhitespace: true,
           collapseBooleanAttributes: true,
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
           removeRedundantAttributes: true,
           useShortDoctype: true,
           removeEmptyAttributes: true,
-          removeOptionalTags: true*/
+          removeOptionalTags: true
         },
         files: [{
           expand: true,
@@ -274,32 +274,31 @@ module.exports = function (grunt) {
         }]
       },
       styles: {
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>/styles',
-          dest: '.tmp/styles/',
-          src: '{,*/}*.css'
+        expand: true,
+        dot: true,
+        cwd: '<%= yeoman.app %>/styles',
+        dest: '.tmp/styles/',
+        src: '{,*/}*.css'
       }
     },
     concurrent: {
       server: [
-          'compass',
-          'coffee:dist',
-          'copy:styles',
-          'autoprefixer'
+        'compass',
+        'coffee:dist',
+        'copy:styles',
+        'autoprefixer'
       ],
       test: [
-          'coffee',
-          'copy:styles',
-          'autoprefixer'
+        'coffee',
+        'copy:styles',
+        'autoprefixer'
       ],
       dist: [
-          'coffee',
-          'compass',
-          'copy:styles',
-          'imagemin',
-          'svgmin',
-          'htmlmin'
+        'coffee',
+        'compass',
+        'copy:styles',
+        'imagemin',
+        'htmlmin'
       ]
     },
     karma: {
@@ -354,7 +353,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    // 'karma'
   ]);
 
   grunt.registerTask('build', [
@@ -367,7 +366,7 @@ module.exports = function (grunt) {
     'cdnify',
     'ngmin',
     'cssmin',
-    'uglify',
+    // 'uglify',
     'rev',
     'usemin'
   ]);

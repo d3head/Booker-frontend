@@ -7,6 +7,5 @@ angular.module( 'bookerApp' )
         $scope.books = data
       )
       .error(( data ) ->
-        $scope.books = data
-        console.log data
+        $scope.books = 'Oops, error'
       )

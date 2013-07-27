@@ -3,7 +3,7 @@
 describe 'Controller: StatsCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'BookerApp'
+  beforeEach module 'bookerApp'
 
   StatsCtrl = {}
   scope = {}
