@@ -167,3 +167,6 @@ input {
     }
   }
 }
+input::-webkit-input-placeholder { 
+  line-height: 1.4em;
+}
