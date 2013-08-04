@@ -103,11 +103,11 @@ input {
       position: absolute;
       bottom: 75px;
    
-      .medium {
+      &.medium {
         font-size:20px;
       }
       
-      .small {
+      &.small {
         font-size: 15px;
       }
     }
