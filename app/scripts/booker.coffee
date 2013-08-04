@@ -3,9 +3,9 @@
 window.booker = {
   api: {
     url: '//api.booker.am',
-    stats: url + '/stats/',
+    stats: '/stats/',
     books: '/books/',
-    authors: url + '/authors/',
+    authors: '/authors/',
     categories: '/categories/'
   },
   colors: [
