@@ -11,3 +11,9 @@ angular.module( 'bookerApp' )
       classie.toggle this, "active"
       classie.toggle body, "active"
       classie.toggle menuLeft, "active"
+      
+        
+  .config ["$httpProvider", ($httpProvider) ->
+    $httpProvider.defaults.useXDomain = true
+    delete $httpProvider.defaults.headers.common["X-Requested-With"]
+  ]

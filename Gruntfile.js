@@ -222,9 +222,9 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
-            '.tmp/styles/{,*/}*.css',
-            '<%= yeoman.app %>/styles/{,*/}*.css'
-          ]
+            '<%= yeoman.app %>/styles/{,*/}*.css',
+            '.tmp/styles/{,*/}*.css'
+          ],
         }
       }
     },
@@ -271,15 +271,14 @@ module.exports = function (grunt) {
           src: [
             'generated/*'
           ]
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>/styles',
+          dest: '.tmp/styles/',
+          src: [ '{,*/}*.scss' ]
         }]
       },
-      styles: {
-        expand: true,
-        dot: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
-      }
     },
     concurrent: {
       server: [
@@ -289,16 +288,15 @@ module.exports = function (grunt) {
         'autoprefixer'
       ],
       test: [
-        'coffee',
-        'copy:styles',
-        'autoprefixer'
+        //'coffee',
+        //'copy:styles',
+        //'autoprefixer'
       ],
       dist: [
-        'coffee',
-        'compass',
-        'copy:styles',
-        'imagemin',
-        'htmlmin'
+        //'coffee',
+        //'compass',
+        //'imagemin',
+        'htmlmin:dist'
       ]
     },
     karma: {
@@ -355,12 +353,14 @@ module.exports = function (grunt) {
     'connect:test',
     // 'karma'
   ]);
-
+  
   grunt.registerTask('build', [
     'clean:dist',
     'useminPrepare',
+    'compass',
     'concurrent:dist',
     'autoprefixer',
+    'coffee',
     'concat',
     'copy:dist',
     // 'cdnify',
@@ -372,7 +372,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'test',
     'build'
   ]);
