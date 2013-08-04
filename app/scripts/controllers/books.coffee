@@ -3,7 +3,12 @@
 angular.module( 'bookerApp' )
   .controller 'BooksCtrl', ( $scope, $http ) ->
     $http.get( booker.api.url )
-      .success(( data ) ->
+      .success(( data ) -> 
+        for i in data
+          do (i) ->
+            $scope.size = medium when data.title.length > 10
+            $scope.size = small when data.title.length > 20
+      
         $scope.books = data
       )
       .error(( data ) ->
