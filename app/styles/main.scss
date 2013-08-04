@@ -102,6 +102,14 @@ input {
       font-weight: 700;
       position: absolute;
       bottom: 75px;
+   
+      .medium {
+        font-size:20px;
+      }
+      
+      .small {
+        font-size: 15px;
+      }
     }
   }
 
@@ -119,14 +127,6 @@ input {
     line-height: 25px;
 
     font-family: $sans-serif;
-    
-    .medium {
-      font-size:25px;
-    }
-    
-    .small {
-      font-size: 15px;
-    }
   }
 
   .book-meta {
