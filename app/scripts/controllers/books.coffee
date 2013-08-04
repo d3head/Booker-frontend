@@ -6,8 +6,9 @@ angular.module( 'bookerApp' )
       .success(( data ) -> 
         for i in data
           do (i) ->
-            $scope.size = 'medium' if i.title.length > 5
-            $scope.size = 'small' if i.title.length > 9
+            i.size = 'medium' if i.title.length > 5
+            i.size = 'small' if i.title.length > 9
+            return data
       
         $scope.books = data
       )
