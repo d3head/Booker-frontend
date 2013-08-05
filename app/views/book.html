@@ -1,7 +1,7 @@
 <div class="books" ng-controller="BookCtrl">
   <div class="container">
     <ul class="unstyled">
-      <li class="book">
+      <li class="book" ng-repeat="book in books">
         <div class="book-image" style="background-color: {{book.color}}">
           <h3 class="book-iauthor">
             {{book.author}}
