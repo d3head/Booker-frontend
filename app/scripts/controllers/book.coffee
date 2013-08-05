@@ -7,8 +7,8 @@ angular.module( 'bookerApp' )
         data.size = 'medium' if data.title.length >= 9
         data.size = 'small' if data.title.length >= 11
       
-        $scope.books = data
+        $scope.book = data
       )
       .error(( data ) ->
-        $scope.books = 'Oops, error'
+        $scope.book = 'Oops, error'
       )
