@@ -26,11 +26,11 @@
           <a ng-href="#/authors">Authors</a>
         </header>
 
-        <div class="menu-stats" ng-controller="StatsCtrl" ng-cloak>
-          <h2>+{{stats.addedToday}} <small>books today</small></h2>
-          <h2>{{stats.books}} <small>books</small></h2>
-          <h2>{{stats.authors}} <small>authors</small></h2>
-          <h2>{{stats.tags}} <small>tags</small></h2>
+        <div class="menu-stats" ng-controller="StatsCtrl">
+          <h2>+<span ng-bind="stats.addedToday"></span> <small>books today</small></h2>
+          <h2><span ng-bind="stats.books"></span> <small>books</small></h2>
+          <h2><span ng-bind="stats.authors"></span> <small>authors</small></h2>
+          <h2><span ng-bind="stats.tags"></span> <small>tags</small></h2>
         </div>
 
         <footer class="menu-footer">
