@@ -2,7 +2,7 @@
 
 angular.module( 'bookerApp' )
   .controller 'BookCtrl', ( $scope, $http, $routeParams ) ->
-    $http.get( booker.api.url + booker.api.books )
+    $http.get( booker.api.url + booker.api.books + $routeParams.id )
       .success(( data ) -> 
         for i in data
           do (i) ->
