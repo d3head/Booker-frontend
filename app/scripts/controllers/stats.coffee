@@ -2,7 +2,7 @@
 
 angular.module( 'bookerApp' )
   .controller 'StatsCtrl', ( $scope, $http ) ->
-    $http.get( booker.api.url + '/stats/' )
+    $http.get( booker.api.url + booker.api.stats )
       .success(( data ) ->
         $scope.stats = data
       )
