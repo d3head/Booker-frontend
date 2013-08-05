@@ -160,6 +160,9 @@ input {
     padding: 0;
     border: 0;
     font-family: $serif;
+    /* TODO: То, что ниже, выпилить, после добавления формы публикации книг */
+    max-height: 100px;
+    overflow: hidden;
   }
 
   .book-download {
