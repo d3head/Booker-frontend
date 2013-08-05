@@ -7,7 +7,7 @@ angular.module( 'bookerApp' )
         data.size = 'medium' if data.title.length >= 9
         data.size = 'small' if data.title.length >= 11
         
-        alert $routeParams.id
+        console.log $routeParams.id
       
         $scope.book = data
       )
