@@ -2,10 +2,8 @@
 
 angular.module( 'bookerApp' )
   .controller 'BookCtrl', ( $scope, $http, $routeParams ) ->
-    $http.get( booker.api.url + booker.api.books + $routeParams.id )
+    $http.get( booker.api.url + booker.api.books + 'Dune' )
       .success(( data ) -> 
-        data.size = 'medium' if data.title.length >= 9
-        data.size = 'small' if data.title.length >= 11
         
         console.log $routeParams.id
       
