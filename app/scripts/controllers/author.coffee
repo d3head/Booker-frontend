@@ -12,7 +12,6 @@ angular.module( 'bookerApp' )
         
         $scope.books  = data
         $scope.author = $routeParams.name
-        }
       )
       .error(( data ) ->
         $scope.books = 'Oops, error'
