@@ -10,9 +10,8 @@ angular.module( 'bookerApp' )
             i.size = 'small' if i.title.length >= 11
             return data
         
-        $scope.model = {
-          books: data,
-          author: $routeParams.name
+        $scope.books  = data
+        $scope.author = $routeParams.name
         }
       )
       .error(( data ) ->
