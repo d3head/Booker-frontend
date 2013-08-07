@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
   .controller 'BooksCtrl', ( $scope, $http ) ->
     $http.get( booker.api.url )
       .success(( data ) -> 
