@@ -9,7 +9,7 @@ translations =
     books_by: "от"
     books_author: "автор"
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
   .config [ '$routeProvider', ( $routeProvider ) ->
 
     $routeProvider
@@ -21,12 +21,4 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
       .when( '/categories', templateUrl: 'views/books.html', controller: 'BooksCtrl' )
       .when( '/categories/:name', templateUrl: 'views/category.html', controller: 'CategoryCtrl' )
       .otherwise( redirectTo: '/' )
-  ], [ "$translateProvider", ($translateProvider) ->
-    $translateProvider.translations en,
-      books_by: "by"
-    
-    $translateProvider.translations ru,
-      books_by: "от"
-      
-    $translateProvider.preferredLanguage "ru"
   ]
