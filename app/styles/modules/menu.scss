@@ -14,8 +14,16 @@
   }
 
   .menu-lang {
-    margin-top: -15px;
-    margin-left: 100px;
+    margin-left: 210px;
+    
+    span {
+      color: #f3f3f3;
+      border-bottom: 1px dotted;
+      
+      &:hover {
+        border-bottom: none;
+      }
+    }
   }
   
   .menu-header {
