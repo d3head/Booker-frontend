@@ -14,14 +14,15 @@
   }
 
   .menu-lang {
-    margin-left: 210px;
+    margin-left: 200px;
+    color: rgb(179, 179, 177);
     
     span {
-      color: #f3f3f3;
       border-bottom: 1px dotted;
       
       &:hover {
         border-bottom: none;
+        cursor: pointer;
       }
     }
   }
