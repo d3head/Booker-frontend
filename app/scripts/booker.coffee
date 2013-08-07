@@ -15,12 +15,6 @@ window.booker = {
     '#d35400',
     '#2980b9',
   ],
-  lang_en: {
-    books_by: "by"
-  },
-  lang_ru: {
-    books_by: "от"
-  }
 }
 
 angular.module( 'bookerApp', ['pascalprecht.translate'] )
@@ -28,5 +22,8 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
     $translateProvider.translations 'ru',
       languages.russian
       
-    $translateProvider.preferredLanguage 'ru'
+    $translateProvider.translations 'en',
+      languages.english
+      
+    $translateProvider.preferredLanguage 'en'
   ]
