@@ -21,6 +21,10 @@
   <body class="menu-push" ng-app="bookerApp">
     <div ng-controller="BookerCtrl">
       <nav class="menu" id="bookerMenu">
+        <div class="menu-lang">
+        ru/en
+        </div>
+        
         <header class="menu-header">
           <a ng-href="#/books" translate="menu.books"></a>
           <a ng-href="#/authors" translate="menu.authors"></a>
@@ -43,10 +47,6 @@
         </footer>
       </nav>
       <a href="" class="btn btn-large btn-bookerMenu" id="bookerMenuButton">B</a>
-      
-      <div id="langSwitch">
-        ru/en
-      </div>
     </div>
 
     <div class="splash">
