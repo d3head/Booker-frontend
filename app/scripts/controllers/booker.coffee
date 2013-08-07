@@ -4,6 +4,7 @@ angular.module( 'bookerApp' )
   .controller 'BookerCtrl', ( $scope, $http, $translate ) ->
 
     menuLeft = document.getElementById( "bookerMenu" )
+    langSwitch = document.getElementById( "langSwitch" )
     showLeftPush = document.getElementById( "bookerMenuButton" )
     body = document.body
     showLeftPush.onclick = ( e ) ->
@@ -11,6 +12,7 @@ angular.module( 'bookerApp' )
       classie.toggle this, "active"
       classie.toggle body, "active"
       classie.toggle menuLeft, "active"
+      classie.toggle langSwitch, "active"
       
         
   .config ["$httpProvider", ($httpProvider) ->
