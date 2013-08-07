@@ -17,7 +17,7 @@ window.booker = {
   ],
 }
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
       lang_ru
