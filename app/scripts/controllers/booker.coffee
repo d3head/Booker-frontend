@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
   .controller 'BookerCtrl', ( $scope, $http ) ->
 
     menuLeft = document.getElementById( "bookerMenu" )
@@ -16,12 +16,4 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .config ["$httpProvider", ($httpProvider) ->
     $httpProvider.defaults.useXDomain = true
     delete $httpProvider.defaults.headers.common["X-Requested-With"]
-  ], [ "$translateProvider", ($translateProvider) ->
-    $translateProvider.translations en,
-      books_by: "by"
-    
-    $translateProvider.translations ru,
-      books_by: "от"
-      
-    $translateProvider.preferredLanguage "ru"
   ]
