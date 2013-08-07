@@ -22,15 +22,15 @@
     <div ng-controller="BookerCtrl">
       <nav class="menu" id="bookerMenu">
         <header class="menu-header">
-          <a ng-href="#/books">Books</a>
-          <a ng-href="#/authors">Authors</a>
+          <a ng-href="#/books" translate="menu.books"></a>
+          <a ng-href="#/authors" translate="menu.authors"></a>
         </header>
 
         <div class="menu-stats" ng-controller="StatsCtrl">
-          <h2>+<span ng-bind="stats.addedToday"></span> <small>books today</small></h2>
-          <h2><span ng-bind="stats.books"></span> <small>books</small></h2>
-          <h2><span ng-bind="stats.authors"></span> <small>authors</small></h2>
-          <h2><span ng-bind="stats.tags"></span> <small>tags</small></h2>
+          <h2>+<span ng-bind="stats.addedToday"></span> <small translate="stats.books_today"></small></h2>
+          <h2><span ng-bind="stats.books"></span> <small translate="stats.books"></small></h2>
+          <h2><span ng-bind="stats.authors"></span> <small translate="stats.authors"></small></h2>
+          <h2><span ng-bind="stats.tags"></span> <small translate="stats.tags"></small></h2>
         </div>
 
         <footer class="menu-footer">
