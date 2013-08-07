@@ -14,7 +14,7 @@
         <div class="book-info">
           <h2 class="book-title"><a ng-href="#/books/{{book.title}}">{{book.title}}</a></h2>
           <h5 class="book-meta">
-            <span>{{books_by}} <a ng-href="#/authors/{{book.author}}">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a ng-href="#/categories/{{tag}}">{{tag}}</a></span>
+            <span>{{ 'books_by' | translate} <a ng-href="#/authors/{{book.author}}">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a ng-href="#/categories/{{tag}}">{{tag}}</a></span>
           </h5>
 
           <blockquote class="book-description">{{book.description}}</blockquote>
