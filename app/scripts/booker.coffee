@@ -26,4 +26,6 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
       lang_en
       
     $translateProvider.preferredLanguage 'ru'
+    
+    $translateProvider.useLocalStorage()
   ]
