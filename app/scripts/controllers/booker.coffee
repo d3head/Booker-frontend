@@ -1,7 +1,7 @@
 'use strict'
 
 translations =
-  booker.by: "by"
+  books_by: "by"
 
 angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .controller 'BookerCtrl', ( $scope, $http ) ->
