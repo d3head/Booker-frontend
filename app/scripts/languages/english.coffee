@@ -3,7 +3,7 @@
 window.languages = {
   english: {
     main: {
-      search: "Search",
+      search: "Search"
     },
     menu: {
       books: "Books",
