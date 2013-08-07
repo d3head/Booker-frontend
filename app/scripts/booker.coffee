@@ -23,4 +23,4 @@ window.booker = {
   }
 }
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
