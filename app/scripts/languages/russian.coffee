@@ -2,6 +2,9 @@
 
 window.languages = {
   russian: {
+    main: {
+      search: "Поиск",
+    },
     menu: {
       books: "Книги",
       authors: "Авторы"

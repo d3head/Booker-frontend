@@ -2,6 +2,9 @@
 
 window.languages = {
   english: {
+    main: {
+      search: "Search",
+    },
     menu: {
       books: "Books",
       authors: "Authors"
