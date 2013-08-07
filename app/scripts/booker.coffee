@@ -25,5 +25,5 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
     $translateProvider.translations 'en',
       languages.english
       
-    $translateProvider.preferredLanguage 'ru'
+    $translateProvider.preferredLanguage 'en'
   ]
