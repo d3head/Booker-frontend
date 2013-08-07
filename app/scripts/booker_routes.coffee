@@ -1,14 +1,5 @@
 'use strict'
 
-translations =
-  en:
-    books_by: "by"
-    books_author: "author"
-
-  ru:
-    books_by: "от"
-    books_author: "автор"
-
 angular.module( 'bookerApp' )
   .config [ '$routeProvider', ( $routeProvider ) ->
 
