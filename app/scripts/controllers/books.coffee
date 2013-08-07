@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
   .controller 'BooksCtrl', ( $scope, $http ) ->
     $http.get( booker.api.url )
       .success(( data ) -> 
@@ -15,12 +15,3 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
       .error(( data ) ->
         $scope.books = 'Oops, error'
       )
-  .congig [ "$translateProvider", ($translateProvider) ->
-    $translateProvider.translations en,
-      books_by: "by"
-    
-    $translateProvider.translations ru,
-      books_by: "от"
-      
-    $translateProvider.preferredLanguage "ru"
-  ]
