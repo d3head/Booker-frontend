@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp' )
+angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .controller 'BooksCtrl', ( $scope, $http ) ->
     $http.get( booker.api.url )
       .success(( data ) -> 
@@ -15,3 +15,13 @@ angular.module( 'bookerApp' )
       .error(( data ) ->
         $scope.books = 'Oops, error'
       )
+      
+  .config ["$translateProvider", ($translateProvider) ->
+    $translateProvider.translations "en",
+      books_by: "by"
+
+    $translateProvider.translations "ru",
+      books_by: "от"
+
+    $translateProvider.preferredLanguage "ru"
+  ]
