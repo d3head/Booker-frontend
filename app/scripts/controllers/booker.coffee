@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp', ['pascalprecht.translate'] )
+angular.module( 'bookerApp' )
   .controller 'BookerCtrl', ( $scope, $http ) ->
 
     menuLeft = document.getElementById( "bookerMenu" )

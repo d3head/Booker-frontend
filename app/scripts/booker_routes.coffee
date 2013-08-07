@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module( 'bookerApp', [] )
+angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .config [ '$routeProvider', ( $routeProvider ) ->
 
     $routeProvider
