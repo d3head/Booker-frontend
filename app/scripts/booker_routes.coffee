@@ -1,6 +1,9 @@
 'use strict'
 
-angular.module( 'bookerApp' )
+translations =
+  books_by: "by"
+
+angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .config [ '$routeProvider', ( $routeProvider ) ->
 
     $routeProvider
@@ -12,4 +15,6 @@ angular.module( 'bookerApp' )
       .when( '/categories', templateUrl: 'views/books.html', controller: 'BooksCtrl' )
       .when( '/categories/:name', templateUrl: 'views/category.html', controller: 'CategoryCtrl' )
       .otherwise( redirectTo: '/' )
+  ], [ "$translateProvider", ($translateProvider) ->
+    $translateProvider.translations translations
   ]
