@@ -12,6 +12,9 @@ angular.module( 'bookerApp' )
       classie.toggle body, "active"
       classie.toggle menuLeft, "active"
       
+    $scope.changeLanguage = (langKey) ->
+      $translate.uses langKey
+      
         
   .config ["$httpProvider", ($httpProvider) ->
     $httpProvider.defaults.useXDomain = true
