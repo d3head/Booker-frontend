@@ -20,10 +20,10 @@ window.booker = {
 angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
-      languages.russian
+      lang_ru
       
     $translateProvider.translations 'en',
-      languages.english
+      lang_en
       
     $translateProvider.preferredLanguage 'ru'
   ]
