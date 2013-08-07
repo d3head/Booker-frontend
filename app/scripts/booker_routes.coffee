@@ -1,7 +1,13 @@
 'use strict'
 
 translations =
-  books_by: "by"
+  en:
+    books_by: "by"
+    books_author: "author"
+
+  ru:
+    books_by: "от"
+    books_author: "автор"
 
 angular.module( 'bookerApp', ['pascalprecht.translate'] )
   .config [ '$routeProvider', ( $routeProvider ) ->
@@ -17,4 +23,5 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
       .otherwise( redirectTo: '/' )
   ], [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations translations
+    $translateProvider.preferredLanguage "ru"
   ]
