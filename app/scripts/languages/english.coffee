@@ -10,7 +10,7 @@ window.languages = {
       books_today: "books today",
       books: "books",
       authors: "authors",
-      tags: "тэгов"
+      tags: "tags"
     },
     books: {
       by: "by",
