@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module( 'bookerApp' )
-  .controller 'BookerCtrl', ( $scope, $http, $translate ) ->
+  .controller 'BookerCtrl', ( $scope, $http ) ->
 
     menuLeft = document.getElementById( "bookerMenu" )
     showLeftPush = document.getElementById( "bookerMenuButton" )
