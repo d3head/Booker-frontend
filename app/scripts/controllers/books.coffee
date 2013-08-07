@@ -15,13 +15,3 @@ angular.module( 'bookerApp' )
       .error(( data ) ->
         $scope.books = 'Oops, error'
       )
-      
-  .config ["$translateProvider", ($translateProvider) ->
-    $translateProvider.translations "en",
-      books_by: "by"
-
-    $translateProvider.translations "ru",
-      books_by: "от"
-
-    $translateProvider.preferredLanguage "ru"
-  ]
