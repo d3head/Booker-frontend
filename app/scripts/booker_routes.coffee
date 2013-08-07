@@ -22,6 +22,11 @@ angular.module( 'bookerApp', ['pascalprecht.translate'] )
       .when( '/categories/:name', templateUrl: 'views/category.html', controller: 'CategoryCtrl' )
       .otherwise( redirectTo: '/' )
   ], [ "$translateProvider", ($translateProvider) ->
-    $translateProvider.translations translations
+    $translateProvider.translations en,
+      books_by: "by"
+    
+    $translateProvider.translations ru,
+      books_by: "от"
+      
     $translateProvider.preferredLanguage "ru"
   ]
