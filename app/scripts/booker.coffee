@@ -17,7 +17,7 @@ window.booker = {
   ],
 }
 
-angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate'] )
+angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
       lang_ru
@@ -28,4 +28,6 @@ angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate'] )
     $translateProvider.preferredLanguage 'ru'
     
     $translateProvider.useLocalStorage()
-  ]
+  ], 
+  .config (RestangularProvider) ->
+  RestangularProvider.setBaseUrl "http://api.booker.am"
