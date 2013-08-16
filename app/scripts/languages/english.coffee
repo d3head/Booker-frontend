@@ -6,7 +6,8 @@ window.lang_en = {
   },
   menu: {
     books: "Books",
-    authors: "Authors"
+    authors: "Authors",
+    add: "Add a book"
   },
   stats: {
     books_today: "books today",

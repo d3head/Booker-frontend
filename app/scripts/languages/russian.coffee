@@ -6,7 +6,8 @@ window.lang_ru = {
   },
   menu: {
     books: "Книги",
-    authors: "Авторы"
+    authors: "Авторы",
+    add: "Добавить книгу"
   },
   stats: {
     books_today: "книг сегодня",
