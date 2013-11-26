@@ -2,7 +2,7 @@
 
 window.booker = {
   api: {
-    url: '//api.booker.am',
+    url: '//localhost:1337',
     stats: '/stats/',
     books: '/books/',
     authors: '/authors/',
@@ -17,7 +17,7 @@ window.booker = {
   ],
 }
 
-angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular'] )
+angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'siyfion.sfTypeahead', 'ngRoute', 'ngSanitize', 'ngAnimate'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
       lang_ru

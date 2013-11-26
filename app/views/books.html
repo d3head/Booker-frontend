@@ -1,7 +1,7 @@
 <div class="books" ng-controller="BooksCtrl">
   <div class="container">
     <ul class="unstyled">
-      <li class="book" ng-repeat="book in books">
+      <li class="book fadein-animate" ng-repeat="book in books">
         <div class="book-image" style="background-color: {{book.color}}">
           <h3 class="book-iauthor">
             {{book.author}}
@@ -25,5 +25,7 @@
         </div>
       </li>
     </ul>
+    
+     {{ empty }}
   </div>
 </div>

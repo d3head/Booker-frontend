@@ -15,7 +15,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
+  //grunt.loadNpmTasks('grunt-contrib-compass');
   // configurable paths
   var yeomanConfig = {
     app: 'app',
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost'
+        hostname: '0.0.0.0'
       },
       livereload: {
         options: {
@@ -110,7 +110,16 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git*'
+          ]
+        }]
+      }
     },
     jshint: {
       options: {
@@ -235,7 +244,7 @@ module.exports = function (grunt) {
           // https://github.com/yeoman/grunt-usemin/issues/44
           //collapseWhitespace: true,
           collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
+          removeAttributeQuotes: false,
           removeRedundantAttributes: true,
           useShortDoctype: true,
           removeEmptyAttributes: true,
@@ -278,13 +287,13 @@ module.exports = function (grunt) {
           dest: '.tmp/styles/',
           src: [ '{,*/}*.scss' ]
         }]
-      },
+      }
     },
     concurrent: {
       server: [
         'compass',
         'coffee:dist',
-        'copy:styles',
+        //'copy:styles',
         'autoprefixer'
       ],
       test: [
@@ -330,7 +339,9 @@ module.exports = function (grunt) {
       }
     }
   });
-
+  
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -338,8 +349,16 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'useminPrepare',
       'concurrent:server',
-      'autoprefixer',
+      'concat',
+      'copy',
+      // 'cdnify',
+      'ngmin',
+      'cssmin',
+      // 'uglify',
+      'rev',
+      'usemin',
       'connect:livereload',
       'open',
       'watch'
