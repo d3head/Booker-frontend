@@ -153,14 +153,8 @@ input {
   .book-info {
     display-inline: block;
     float: left;
-    margin-left: 150px;
+    margin-left: 10px;
     height: 200px;
-    position: absolute;
-    
-    @media (max-width: 767px) {
-     margin-left: 120px;
-     margin-right: -10px;
-    }
   }
 
   .book-title {
