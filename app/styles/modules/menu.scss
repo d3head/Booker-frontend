@@ -4,7 +4,7 @@
   background: rgb( 17, 17, 17 );
   position: fixed;
   left: -300px;
-  width: 240px;
+  width: 300px;
   height: 100%;
   padding: 40px 20px 40px 40px;
   @include transition( all, .3s, ease );
@@ -64,7 +64,7 @@
   .menu-footer {
     position: absolute;
     bottom: 0;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 
     font-size: .9em;
     color: rgb(163, 163, 163);

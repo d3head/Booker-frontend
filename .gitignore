@@ -5,3 +5,5 @@ dist
 app/components
 .DS_Store
 npm-debug.log
+
+app/styles/bootstrap2.min.css

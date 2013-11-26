@@ -17,7 +17,7 @@ window.booker = {
   ],
 }
 
-angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'siyfion.sfTypeahead', 'ngRoute', 'ngSanitize', 'ngAnimate'] )
+angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'siyfion.sfTypeahead', 'ngRoute', 'ngSanitize', 'ngAnimate', 'ngTouch'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
       lang_ru

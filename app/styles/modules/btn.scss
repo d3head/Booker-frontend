@@ -5,7 +5,11 @@
   position: fixed;
   top: 20px;
   left: 20px;
-
+  padding: 9px 19px 10px 19px;
+  height: 42px;
+  font-weight: 400;
+  font-size: 1.3em;
+  
   background: rgb( 17, 17, 17 );
 
   color: rgb( 255, 255, 255 );
@@ -29,12 +33,17 @@
     span {
       display: inline;
     }
+    
+    &:hover,
+    &:focus {
+      background: rgb( 17, 17, 17 );
+    }
   }
 
   &:hover,
   &:focus {
     border: 0;
-    background: rgb( 17, 17, 17 );
+    background: rgb( 40, 40, 40 );
     color: rgb(255, 255, 255);
   }
 }
