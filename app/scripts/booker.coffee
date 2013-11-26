@@ -2,7 +2,7 @@
 
 window.booker = {
   api: {
-    url: '//localhost:1337',
+    url: '//api.booker.am',
     stats: '/stats/',
     books: '/books/',
     authors: '/authors/',
