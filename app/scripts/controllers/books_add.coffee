@@ -54,7 +54,7 @@ angular.module( 'bookerApp' )
         
         if not $scope.originaltitle or not $scope.title or not $scope.author or not $scope.isbn or not $scope.description
           formAlert 'bookAlert', 'Заполните все поля'
-        #else
+        else
         if format is 'epub' or format is 'fb2' or format is 'pdf'
           $scope.upload = $upload.upload(
             url: booker.api.url + booker.api.books + "upload"
