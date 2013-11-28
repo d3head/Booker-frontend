@@ -9,13 +9,15 @@
     <title>Booker.am</title>
     <meta name="description" content="">
     <!--<meta name="viewport" content="width=device-width">-->
-    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=0.7" user-scalable="no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6" user-scalable="no">
   
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,500,900|Roboto+Slab:400,300,700&subset=latin,cyrillic">
   
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="components/selectize.js/selectize.css">
+    <link rel="stylesheet" href="styles/tipsy.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -61,14 +63,17 @@
       </div>
     </div>
 
-    <div ng-view></div>
+    <div class="fadein-animate" ng-view></div>
 
     <!-- build:js scripts/jquery.min.js -->
     <script src="components/jquery/jquery.js"></script>
     <script src="components/classie/classie.js"></script>
+    <script src="components/selectize.js/selectize.min.js"></script>
+    <script src="scripts/js/jquery.tipsy.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/angular.min.js -->
+    <script src="components/ng-file-upload/angular-file-upload-shim.min.js"></script> 
     <script src="components/angular/angular.js"></script>
     <!-- endbuild -->
 
@@ -86,6 +91,7 @@
     <script src="components/restangular/dist/restangular.min.js"></script>
     <script src="components/angular-typeahead/angular-typeahead.min.js"></script>
     <script src="components/typeahead.js/dist/typeahead.min.js"></script>
+    <script src="components/ng-file-upload/angular-file-upload.min.js"></script> 
     <!-- endbuild -->
     
     <!-- build:js({.tmp,app}) scripts/languages.js -->

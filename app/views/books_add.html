@@ -1,13 +1,47 @@
-<div class="" ng-controller="BooksAddCtrl">
-  <div class="container">
-    <form class="form-add">
-      <input type="text" class="input-medium" placeholder="Оригинальное название книги">
-      <input type="text" class="input-medium" placeholder="Русское название книги">
-      <input type="text" class="input-medium" placeholder="Автор">
-      <input type="text" class="input-medium" placeholder="ISBN">
-      <textarea rows="3" placeholder="Описание"></textarea>
-      <input type="text" class="input-medium" placeholder="Тэги">
-      <button type="submit" class="btn">Добавить</button>
+<div class="books-add" ng-controller="BooksAddCtrl">
+  <div class="fadein-animate" id="addForm">
+    <h2><span>Добавление книги</span></h2>
+    <form class="form-add" ng-submit="addBook()">
+      <dl>
+        <dt>Оригинальное название</dt>   
+        <dd><input type="text" class="input-add" ng-model="originaltitle" placeholder="Cell"></dd>
+        
+        <dt>Русское название</dt>
+        <dd><input type="text" class="input-add" ng-model="title" placeholder="Мобильник"></dd>
+        
+        <dt>Автор</dt>
+        <dd><input type="text" class="input-add" ng-model="author" placeholder="Стивен Кинг"></dd>
+        
+        <dt>ISBN <sup class="question" id="isbn" title="Для вашей книги найти его можно в Google">?</sup></dt>
+        <dd><input type="text" class="input-add" ng-model="isbn" placeholder="5170402775"></dd>
+        
+        <dt>Описание</dt>
+        <dd><textarea rows="3" class="textarea" ng-model="description" placeholder="Молодой художник Клайтон Ридделл (Клай) становится свидетелем того, как в одну минуту сходят с ума люди, разговаривавшие по мобильному (сотовому) телефону."></textarea></dd>
+        
+        <dt>Теги</dt>
+        <dd><input type="text" class="input-tags" ng-model="tags" id="input-tags" placeholder="Теги" selectivize></dd>
+        
+        <dt>Книга <sup class="formats">epub, fb2, pdf</sup> <br /><span class="fadein-animate alert">{{bookAlert}}</span></dt>
+        <dd>
+            <div id="uploadForm" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class" ng-show="dropSupported">
+                  <input type="file" ng-file-select="onFileSelect($files)" class="input-add" multiple>
+            </div>
+            
+            <div class="progress" id="progress" style="display:none">
+              <div class="upload-progress progress-bar" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{uploadProgress}}%;">{{uploadProgress}}%</div>
+            </div>
+            
+            <div ng-file-drop-available="dropSupported=true" ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+            <!--<button ng-click="upload.abort()">Cancel Upload</button>-->
+        </dd>
+      </dl>
+      
+      <div class="clearfix"></div>
+      
+      <button type="submit" class="btn btn-blue">Добавить</button> 
+      <span class="fadein-animate alert">{{btnAlert}}</span>
     </form>
   </div>
+  
+  <div id="formCallback" class="callback fadein-animate">{{formCallback}}</div>
 </div>

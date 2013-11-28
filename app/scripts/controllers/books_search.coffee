@@ -2,8 +2,8 @@
 
 angular.module( 'bookerApp' )
   .controller 'BooksSearchCtrl', ( $scope, $http, $routeParams, $location ) ->
-    $scope.url = 'search/' + $routeParams.id
-    $scope.urlState = 0
+    #$scope.url = 'search/' + $routeParams.id
+    #$scope.urlState = 0
       
     $scope.search = ->
       if $routeParams.id
@@ -50,6 +50,7 @@ angular.module( 'bookerApp' )
         )
         
     $scope.search()
+    $scope.searchQuery = null
   .factory 'BooksSearchCtrl', (TheObject) ->
     service = (obj) ->
       @obj = obj

@@ -340,7 +340,7 @@ module.exports = function (grunt) {
     }
   });
   
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  //grunt.loadNpmTasks('grunt-contrib-compass');
   
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
