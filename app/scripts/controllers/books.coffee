@@ -17,8 +17,9 @@ angular.module( 'bookerApp' )
               i.size = 'medium' if i.title.length >= 8
               i.size = 'small' if i.title.length >= 11
               return data
-              
-          $("#show-more").hide()  if data.length % 2 isnt 0
+          
+          if data.length < 12 or data < 12
+            $("#show-more").hide()  
           
           if data < 1
             $scope.empty = "Увы, ничего не найдено!"
@@ -30,8 +31,5 @@ angular.module( 'bookerApp' )
             $scope.books = data
         
       $scope.lim1 = $scope.lim1 + 12
-      
-      setTimeout ->
-        $("#loader").hide()
         
     $scope.more()

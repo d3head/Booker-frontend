@@ -40,7 +40,8 @@ angular.module( 'bookerApp' )
               i.size = 'small' if i.title.length >= 11
               return data
           
-          $("#show-more").hide()  if data.length % 2 isnt 0
+          if data.length < 12 or data < 12
+            $("#show-more").hide()
           
           if data < 1
             $scope.empty = "Увы, ничего не найдено!"
@@ -49,8 +50,8 @@ angular.module( 'bookerApp' )
             $("#empty").hide()
           
           
-          #if($scope.books > 0)
-          #  $scope.books = 0
+          if($scope.books > 0)
+            $scope.books = 0
           
           if more        
             $scope.books = $scope.books.concat data
