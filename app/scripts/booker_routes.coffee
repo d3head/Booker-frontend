@@ -4,7 +4,7 @@ angular.module( 'bookerApp' )
   .config [ '$routeProvider', ( $routeProvider ) ->
 
     $routeProvider
-      .when( '/', templateUrl: 'views/books.html', controller: 'BooksSearchCtrl' )
+      .when( '/', templateUrl: 'views/books.html' )
       .when( '/books', templateUrl: 'views/books.html', controller: 'BooksCtrl' )
       .when( '/books/add', templateUrl: 'views/books_add.html', controller: 'BooksAddCtrl' )
       .when( '/books/search', templateUrl: 'views/books.html', controller: 'BooksCtrl' )
