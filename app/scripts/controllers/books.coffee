@@ -6,6 +6,8 @@ angular.module( 'bookerApp' )
     $scope.more = (more) ->
       unless more
         $scope.lim1 = 0
+        
+      $("#loader").show()
       
       books = Restangular.all booker.api.url
       
@@ -27,8 +29,9 @@ angular.module( 'bookerApp' )
           else
             $scope.books = data
         
-        
-      
       $scope.lim1 = $scope.lim1 + 12
+      
+      setTimeout ->
+        $("#loader").hide()
         
     $scope.more()

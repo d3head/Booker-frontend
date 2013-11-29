@@ -27,11 +27,11 @@
       
       <li class="row">
         <div class="col-xs-12">
-          <div class="btn btn-blue more" id="show-more" ng-click="more(true)">
-            {{ 'main.load_more' | translate }}
+          <div id="loader">Загрузка</div>
+          <div class="btn btn-blue more" id="show-more" ng-click="more(true)" ng-bind="'main.load_more' | translate">
           </div>
           
-          {{ empty }}
+          <div ng-bind="empty"></div>
         </div>
       </li>
     </ul>

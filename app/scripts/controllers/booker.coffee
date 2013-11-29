@@ -15,8 +15,14 @@ angular.module( 'bookerApp' )
     $scope.changeLanguage = (langKey) ->
       $translate.uses langKey
       
+  .directive "dynamicPlaceholder", ->
+    restrict: "A"
+    link: ($scope, element, attrs) ->
+      attrs.$observe "dynamicPlaceholder", (value) ->
+        element.attr "placeholder", value
+      
         
-  .config ["$httpProvider", ($httpProvider) ->
+  .config [ "$httpProvider", ( $httpProvider ) ->
     $httpProvider.defaults.useXDomain = true
-    delete $httpProvider.defaults.headers.common["X-Requested-With"]
+    delete $httpProvider.defaults.headers.common[ "X-Requested-With" ]
   ]

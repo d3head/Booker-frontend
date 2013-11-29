@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body class="menu-push" ng-app="bookerApp" ng-cloak>
+  <body class="menu-push" ng-app="bookerApp" class="ng-cloak">
     <div ng-controller="BookerCtrl">
       <nav class="menu" id="bookerMenu">
         <div class="menu-lang">
@@ -57,7 +57,7 @@
       <div class="container">
         <div class="search">
           <form ng-submit="search()">
-            <input type="search" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" placeholder="{{ 'main.search' | translate }}">
+            <input type="search" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" dynamic-placeholder="{{ 'main.search' | translate }}">
           </form>
         </div>
       </div>
