@@ -26,6 +26,10 @@ input {
   box-shadow: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 .menu-push {
   overflow-x: hidden;
   position: relative;
@@ -112,7 +116,6 @@ input {
   .book {
     margin-bottom: 50px;
     position: relative;
-    list-style-type: none;
     max-width: 1100px;
   }
 
@@ -220,6 +223,26 @@ input {
       margin-right: 10px;
     }
   }
+  
+  .more {
+    width: 100%;
+    padding: 25px 0 25px 0;
+    margin-left: -15px;
+    font-size: 14px;
+    text-align: center;
+    background: rgb( 255, 255, 255 );
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px #ddd;
+    @include transition( all, .3s, ease );
+    
+    @media (max-width: 767px) {
+      margin-left: 0;
+    }
+    
+    &:hover {
+      background: rgb( 240, 240, 240 );
+    }
+  }
 }
 
 .fadein-animate  {
@@ -267,7 +290,7 @@ input::-webkit-input-placeholder {
   h2 {
     font-weight: 700;
     font-family: $serif;
-    width: 300px;
+    text-align: center;
     margin: 20px auto 30px auto;
     
     span {

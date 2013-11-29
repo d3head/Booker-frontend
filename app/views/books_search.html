@@ -1,31 +1,40 @@
 <div class="books" ng-controller="BooksSearchCtrl">
-   <div class="container">
-     <ul>
-       <li class="book fadein-animate row" ng-repeat="book in books">
-         <div class="book-image col-xs-3" style="background-color: {{book.color}}">
-           <h3 class="book-iauthor">
-             {{book.author}}
-           </h3>
-           <div class="book-ititle {{book.size}}">
-             {{book.title}}
-           </div>
+ <div class="container">
+   <ul>
+     <li class="book fadein-animate row" ng-repeat="book in books">
+       <div class="book-image col-xs-3" style="background-color: {{book.color}}">
+         <h3 class="book-iauthor">
+           {{book.author}}
+         </h3>
+         <div class="book-ititle {{book.size}}">
+           {{book.title}}
          </div>
- 
-         <div class="book-info col-xs-9">
-           <h2 class="book-title"><a ng-href="#/books/{{book.title}}">{{book.title}}</a></h2>
-           <h5 class="book-meta">
-             <span>{{ 'books.by' | translate }} <a ng-href="#/authors/{{book.author}}">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a ng-href="#/books/search/{{tag}}">{{tag}}</a></span>
-           </h5>
- 
-           <blockquote class="book-description">{{book.description}}</blockquote>
- 
-           <ul class="book-download">
-             <li class="book-link" ng-repeat="link in book.links"><a href="{{link.link}}" class="btn btn-blue btn-download">{{link.type}}</a></li>
-           </ul>
-         </div>
-       </li>
-     </ul>
+       </div>
+
+       <div class="book-info col-xs-9">
+         <h2 class="book-title"><a ng-href="#/books/{{book.title}}">{{book.title}}</a></h2>
+         <h5 class="book-meta">
+           <span>{{ 'books.by' | translate }} <a ng-href="#/books/search/{{book.author}}">{{book.author}}</a></span> · <span class="tags" ng-repeat="tag in book.tags"><a ng-href="#/books/search/{{tag}}">{{tag}}</a></span>
+         </h5>
+
+         <blockquote class="book-description">{{book.description}}</blockquote>
+
+         <ul class="book-download">
+           <li class="book-link" ng-repeat="link in book.links"><a href="{{link.link}}" class="btn btn-blue btn-download">{{link.type}}</a></li>
+         </ul>
+       </div>
+     </li>
      
-     {{ empty }}
-   </div>
+     
+     <li class="row">
+       <div class="col-xs-12">
+         <div class="more" id="show-more" ng-click="more(true)">
+           {{ 'main.load_more' | translate }}
+         </div>
+         
+         {{ empty }}
+       </div>    
+      </li>
+   </ul>
  </div>
+</div>

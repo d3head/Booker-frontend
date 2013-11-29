@@ -25,7 +25,7 @@ angular.module( 'bookerApp' )
     
     $scope.addBook = ->
       
-      if not $scope.originaltitle or not $scope.title or not $scope.author or not $scope.isbn or not $scope.description
+      if not $scope.originaltitle or not $scope.title or not $scope.author or not $scope.isbn or not $scope.description or not $scope.links
         formAlert 'btnAlert', 'Заполните все поля'
       else
         
@@ -55,23 +55,23 @@ angular.module( 'bookerApp' )
         if not $scope.originaltitle or not $scope.title or not $scope.author or not $scope.isbn or not $scope.description
           formAlert 'bookAlert', 'Заполните все поля'
         else
-        if format is 'epub' or format is 'fb2' or format is 'pdf'
-          $scope.upload = $upload.upload(
-            url: booker.api.url + booker.api.books + "upload"
-            data:
-              title: $scope.originaltitle
-      
-            file: $file
-          ).progress((evt) ->
-            $("#uploadForm").hide()
-            $("#progress").show()
-            $scope.uploadProgress = parseInt(100.0 * evt.loaded / evt.total)
-          ).success((data, status, headers, config) ->
-            if $scope.links
-              $scope.links = $scope.links.concat(data)
-            else
-              $scope.links = [ data ]
-          )
-        else
-          formAlert 'bookAlert', 'Это не книга'
+          if format is 'epub' or format is 'fb2' or format is 'pdf'
+            $scope.upload = $upload.upload(
+              url: booker.api.url + booker.api.books + "upload"
+              data:
+                title: $scope.originaltitle
+        
+              file: $file
+            ).progress((evt) ->
+              $("#uploadForm").hide()
+              $("#progress").show()
+              $scope.uploadProgress = parseInt(100.0 * evt.loaded / evt.total)
+            ).success((data, status, headers, config) ->
+              if $scope.links
+                $scope.links = $scope.links.concat(data)
+              else
+                $scope.links = [ data ]
+            )
+          else
+            formAlert 'bookAlert', 'Это не книга'
         i++

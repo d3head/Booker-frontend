@@ -1,53 +1,65 @@
 'use strict'
 
 angular.module( 'bookerApp' )
-  .controller 'BooksSearchCtrl', ( $scope, $http, $routeParams, $location ) ->
+  .controller 'BooksSearchCtrl', ( $scope, $http, $routeParams, $location, Restangular ) ->
     #$scope.url = 'search/' + $routeParams.id
     #$scope.urlState = 0
       
-    $scope.search = ->
-      if $routeParams.id
-        if $scope.searchQuery 
-          $scope.url     = 'search/' + $scope.searchQuery
-          $location.url 'books/search/' + $scope.searchQuery
-        else
-          if $scope.urlState 
-            $location.url 'books/search/'
-            $("#searchQuery").val('')
+    $scope.search = (more) ->
+      unless more
+        $scope.lim1 = 0
+      
+      unless more
+        if $routeParams.id
+          if $scope.searchQuery 
+            $scope.url     = 'search/' + $scope.searchQuery
+            $location.url 'books/search/' + $scope.searchQuery
           else
-            $scope.url = 'search/' + $routeParams.id
-            $("#searchQuery").val($routeParams.id)
-      else
-        if $scope.searchQuery
-          $scope.url     = 'search/' + $scope.searchQuery
-          $location.url 'books/search/' + $scope.searchQuery
+            if $scope.urlState 
+              $location.url 'books/search/'
+              $("#searchQuery").val('')
+            else
+              $scope.url = 'search/' + $routeParams.id
+              $("#searchQuery").val($routeParams.id)
         else
-          $scope.url = ''
-          $("#searchQuery").val('')
-        	            
-      $http.get( booker.api.url + booker.api.books + $scope.url )
-        .success(( data ) -> 
+          if $scope.searchQuery
+            $scope.url     = 'search/' + $scope.searchQuery
+            $location.url 'books/search/' + $scope.searchQuery
+          else
+            $scope.url = ''
+            $("#searchQuery").val('')
+      else
+        $scope.url     = 'search/' + $routeParams.id
+      
+      books = Restangular.all booker.api.url + booker.api.books + $scope.url
+      
+      books.customGET( "", { q : $scope.lim1 }).then ( data ) ->
           for i in data
             do (i) ->
-              i.size = 'medium' if i.title.length >= 9
+              i.size = 'medium' if i.title.length >= 8
               i.size = 'small' if i.title.length >= 11
               return data
           
+          $("#show-more").hide()  if data.length % 2 isnt 0
+          
           if data < 1
             $scope.empty = "Увы, ничего не найдено!"
+            $('#show-more').hide()
           else
             $("#empty").hide()
           
-          if($scope.books > 0)
-            $scope.books = 0
           
-          $scope.books = data
+          #if($scope.books > 0)
+          #  $scope.books = 0
+          
+          if more        
+            $scope.books = $scope.books.concat data
+          else
+            $scope.books = data
           
           $scope.urlState = 1
-        )
-        .error(( data ) ->
-          $scope.books = 'Oops, error'
-        )
+          
+      $scope.lim1 = $scope.lim1 + 12
         
     $scope.search()
     $scope.searchQuery = null
