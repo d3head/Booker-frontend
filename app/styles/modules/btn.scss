@@ -17,7 +17,7 @@
   border-radius: 0;
   text-shadow: none;
   border: 0;
-  font-family: $serif;
+  font-family: $roboto !important;
   @include transition( all, .3s, ease );
 
   span {
@@ -58,16 +58,12 @@
   font-family: $serif;
 
   &.btn-blue {
-    background: rgb(0, 174, 239);
+    background: $blue;
 
-    &:hover {
-      color: rgb(255, 255, 255);
-      background: rgb(131, 205, 255);
-    }
-    
+    &:hover,
     &:focus {
       color: rgb(255, 255, 255);
-      background: rgb(131, 205, 255);
+      background: lighten($blue, 10%);
     }
   }
 
@@ -75,6 +71,10 @@
   &.btn-download {
     padding: 10px;
   }
+}
+
+.sans-serif {
+  font-family: $sans-serif !important;
 }
 
 a.btn {

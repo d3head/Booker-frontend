@@ -15,8 +15,10 @@
         <dt>{{ 'add.isbn' | translate }} <sup class="question" id="isbn" title="{{ 'add.isbn_help' | translate }}">?</sup></dt>
         <dd><input type="text" class="input-add" ng-model="isbn" placeholder="5170402775"></dd>
         
-        <dt>{{ 'add.description' | translate }}</dt>
-        <dd><textarea rows="3" class="textarea" ng-model="description" placeholder="Молодой художник Клайтон Ридделл (Клай) становится свидетелем того, как в одну минуту сходят с ума люди, разговаривавшие по мобильному (сотовому) телефону."></textarea></dd>
+        <dt>{{ 'add.description' | translate }} (<span class="count">{{320 - description.length}} символов</span>)</dt>
+        <dd>
+          <textarea rows="3" class="textarea" ng-model="description" ng-maxlength="320" placeholder="Молодой художник Клайтон Ридделл (Клай) становится свидетелем того, как в одну минуту сходят с ума люди, разговаривавшие по мобильному (сотовому) телефону."></textarea>
+        </dd>
         
         <dt>{{ 'add.tags' | translate }}</dt>
         <dd><input type="text" class="input-tags" ng-model="tags" id="input-tags" placeholder="триллер, ужасы" selectivize></dd>
@@ -38,7 +40,7 @@
       
       <div class="clearfix"></div>
       
-      <button type="submit" class="btn btn-blue">{{ 'add.submit' | translate }}</button> 
+      <button type="submit" class="btn btn-blue sans-serif">{{ 'add.submit' | translate }}</button> 
       <span class="fadein-animate alert">{{btnAlert}}</span>
     </form>
   </div>

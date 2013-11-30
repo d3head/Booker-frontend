@@ -11,6 +11,13 @@
 //   }
 // }
 
+@font-face {
+  font-family: Constantia;
+  src: url('/styles/fonts/constantia.eot');
+  src: url('/styles/fonts/constantia.eot') format('embedded-opentype')
+    ,  url('/styles/fonts/constantia.ttf') format('truetype');
+}
+
 a {
   color: #111;
 
@@ -55,7 +62,8 @@ li {
 }
 
 .splash {
-  background: rgb(0, 174, 239);
+  //background: rgb(0, 174, 239);
+  background: $blue;
   color: rgb(255, 255, 255);
   height: 85px;
   padding: 20px 0 30px 0;
@@ -125,8 +133,8 @@ li {
     background: rgb(181, 34, 9);
     color: rgb(255, 255, 255);
     font-family: $serif;
-    box-shadow: -2px 2px 0px rgb(17, 17, 17);
-    text-shadow: 0 1px 0px rgb(17, 17, 17);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     
     @media (max-width: 767px) {
       width: 10px;
@@ -172,13 +180,13 @@ li {
     line-height: 25px;
     font-weight: 700;
 
-    font-family: $sans-serif;
+    font-family: $serif;
   }
 
   .book-meta {
     color: rgb(179, 179, 177);
     font-weight: 400;
-    font-family: $serif;
+    font-family: $sans-serif;
 
     .tags {
       &:after {
@@ -201,13 +209,13 @@ li {
     font-weight: 400;
     font-size: 18px;
     color: rgb(51, 51, 50);
-    line-height: 1.4;
+    line-height: 1.3;
     margin: 0;
     padding: 0;
     border: 0;
     font-family: $serif;
     /* TODO: То, что ниже, выпилить, после добавления формы публикации книг */
-    max-height: 80px;
+    max-height: 90px;
     overflow: hidden;
   }
 
@@ -231,6 +239,7 @@ li {
     font-size: 14px;
     text-align: center;
     cursor: pointer;
+    font-family: $sans-serif !important;
     //box-shadow: 1px 1px 1px 1px #ddd;
     @include transition( all, .3s, ease );
     
@@ -272,7 +281,7 @@ li {
   opacity:1;
 }
 input::-webkit-input-placeholder { 
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 
 .books-add {
