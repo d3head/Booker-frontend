@@ -1,42 +1,51 @@
 <div class="books-add" ng-controller="BooksAddCtrl">
   <div class="fadein-animate" id="addForm">
     <h2><span>{{ 'add.title' | translate }}</span></h2>
-    <form class="form-add" ng-submit="addBook()">
-      <dl>
-        <dt>{{ 'add.originaltitle' | translate }}</dt>   
-        <dd><input type="text" class="input-add" ng-model="originaltitle" placeholder="Cell"></dd>
-        
-        <dt>{{ 'add.russiantitle' | translate }}</dt>
-        <dd><input type="text" class="input-add" ng-model="title" placeholder="Мобильник"></dd>
-        
-        <dt>{{ 'add.author' | translate }}</dt>
-        <dd><input type="text" class="input-add" ng-model="author" placeholder="Стивен Кинг"></dd>
-        
-        <dt>{{ 'add.isbn' | translate }} <sup class="question" id="isbn" title="{{ 'add.isbn_help' | translate }}">?</sup></dt>
-        <dd><input type="text" class="input-add" ng-model="isbn" placeholder="5170402775"></dd>
-        
-        <dt>{{ 'add.description' | translate }} (<span class="count">{{320 - description.length}} символов</span>)</dt>
-        <dd>
-          <textarea rows="3" class="textarea" ng-model="description" ng-maxlength="320" placeholder="Молодой художник Клайтон Ридделл (Клай) становится свидетелем того, как в одну минуту сходят с ума люди, разговаривавшие по мобильному (сотовому) телефону."></textarea>
-        </dd>
-        
-        <dt>{{ 'add.tags' | translate }}</dt>
-        <dd><input type="text" class="input-tags" ng-model="tags" id="input-tags" placeholder="триллер, ужасы" selectivize></dd>
-        
-        <dt>{{ 'add.book' | translate }} <sup class="formats">epub, fb2, pdf</sup> <span class="fadein-animate alert"><br />{{bookAlert}}</span></dt>
-        <dd>
-            <div id="uploadForm" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class" ng-show="dropSupported">
-                  <input type="file" ng-file-select="onFileSelect($files)" class="input-add" multiple>
-            </div>
-            
-            <div class="progress" id="progress" style="display:none">
-              <div class="upload-progress progress-bar" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{uploadProgress}}%;">{{uploadProgress}}%</div>
-            </div>
-            
-            <div ng-file-drop-available="dropSupported=true" ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
-            <!--<button ng-click="upload.abort()">Cancel Upload</button>-->
-        </dd>
-      </dl>
+    <form class="form-add" role="form" ng-submit="addBook()">
+      <div class="form-group">
+        <label class="input-label">{{ 'add.originaltitle' | translate }}</label>
+        <input type="text" class="input-add" ng-model="originaltitle" placeholder="Cell">
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.russiantitle' | translate }}</label>
+        <input type="text" class="input-add" ng-model="title" placeholder="Мобильник">
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.author' | translate }}</label>
+        <input type="text" class="input-add" ng-model="author" placeholder="Стивен Кинг">
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.isbn' | translate }} <sup class="question" id="isbn" title="{{ 'add.isbn_help' | translate }}">?</sup></label>
+        <input type="text" class="input-add" ng-model="isbn" placeholder="5170402775">
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.description' | translate }} (<span class="count">{{320 - description.length}} символов</span>)</label>
+        <textarea rows="4" class="textarea" ng-model="description" maxlength="320" placeholder="Молодой художник Клайтон Ридделл (Клай) становится свидетелем того, как в одну минуту сходят с ума люди, разговаривавшие по мобильному (сотовому) телефону."></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.tags' | translate }}</label>
+        <input type="text" class="input-tags" ng-model="tags" id="input-tags" placeholder="триллер, ужасы" selectivize>     
+      </div>
+      
+      <div class="form-group">
+        <label class="input-label">{{ 'add.book' | translate }} <sup class="formats">epub, fb2, pdf</sup></label>
+          <span class="alert"><br />{{bookAlert}}</span>
+          <div id="uploadForm" ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class" ng-show="dropSupported">
+                <input type="file" ng-file-select="onFileSelect($files)" class="input-add" multiple>
+          </div>
+          
+          <div class="progress" id="progress" style="display:none">
+            <div class="upload-progress progress-bar" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{uploadProgress}}%;">{{uploadProgress}}%</div>
+          </div>
+          
+          <div ng-file-drop-available="dropSupported=true" ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+          <!--<button ng-click="upload.abort()">Cancel Upload</button>-->
+      </div>
       
       <div class="clearfix"></div>
       

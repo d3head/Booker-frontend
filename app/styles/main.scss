@@ -301,26 +301,13 @@ input::-webkit-input-placeholder {
     
   }
   
-  dl {
-    dt {
-      width: 400px;
-      margin-right: 20px;
-      font-size: 16px;
-      font-family: $sans-serif;
-      padding: 10px;
-      
-      sup {
-        &.question {
-          border-bottom: 1px dotted;
-          cursor: pointer;
-        }
-        
-        .formats {
-        }
-      }
-    }
+  .input-label {
+    font-size: 16px;
+    padding-left: 10px;
     
-    dd {
+    sup.question {
+      border-bottom: 1px dotted;
+      cursor: pointer;
     }
   }
   

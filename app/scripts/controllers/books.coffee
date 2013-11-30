@@ -1,13 +1,11 @@
 'use strict'
 
 angular.module( 'bookerApp' )
-  .controller 'BooksCtrl', ( $scope, $http, Restangular, $route ) ->
+  .controller 'BooksCtrl', ( $scope, $http, Restangular) ->
   
     $scope.more = (more) ->
       unless more
         $scope.lim1 = 0
-        
-      $("#loader").show()
       
       books = Restangular.all booker.api.url
       
