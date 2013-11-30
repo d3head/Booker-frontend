@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body class="menu-push" ng-app="bookerApp" class="ng-cloak">
+  <body class="menu-push" ng-app="bookerApp">
     <div ng-controller="BookerCtrl">
       <nav class="menu" id="bookerMenu">
         <div class="menu-lang">
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="fadein-animate" ng-view></div>
+    <div class="fadein-animate" ng-view ng-cloak></div>
 
     <!-- build:js scripts/jquery.min.js -->
     <script src="components/jquery/jquery.min.js"></script>

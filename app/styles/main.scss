@@ -246,11 +246,7 @@ li {
   &.ng-move,
   &.ng-view
   &.ng-hide {
-    -webkit-transition: 0.1s linear all;
-    -moz-transition: 0.1s linear all;
-    -o-transition: 0.1s linear all;
-    transition: 0.1s linear all;
-    position:relative;
+    @include transition( all, 0.3s, linear );
   }
 }
 
@@ -262,6 +258,7 @@ li {
 }
 
 .fadein-animate.ng-leave {
+  @include transition( all, 0, ease );
   opacity:1;
 }
 .fadein-animate.ng-leave.ng-leave-active {
@@ -381,4 +378,8 @@ input::-webkit-input-placeholder {
 
 .pace-inactive {
   display: none;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
