@@ -331,11 +331,15 @@ module.exports = function (grunt) {
     },
     uglify: {
       dist: {
-        files: {
-          '<%= yeoman.dist %>/scripts/scripts.js': [
-            '<%= yeoman.dist %>/scripts/scripts.js'
-          ]
-        }
+        options: {
+          compress: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>/scripts/{,*/}',
+          src: '*.js',
+          dest: '<%= yeoman.dist %>/scripts/{,*/}'
+        }]
       }
     }
   });
@@ -356,7 +360,7 @@ module.exports = function (grunt) {
       // 'cdnify',
       'ngmin',
       'cssmin',
-      // 'uglify',
+      'uglify',
       'rev',
       'usemin',
       'connect:livereload',
@@ -385,7 +389,7 @@ module.exports = function (grunt) {
     // 'cdnify',
     'ngmin',
     'cssmin',
-    // 'uglify',
+    'uglify',
     'rev',
     'usemin'
   ]);

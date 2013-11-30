@@ -29,7 +29,7 @@ angular.module( 'bookerApp' )
             $scope.url = ''
             $("#searchQuery").val('')
       else
-        $scope.url     = 'search/' + $routeParams.id
+        $scope.url = 'search/' + $routeParams.id
       
       books = Restangular.all booker.api.url + booker.api.books + $scope.url
       
