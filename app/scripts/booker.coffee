@@ -1,13 +1,12 @@
 'use strict'
 
-window.booker = {
-  api: {
-    url: '//api.booker.am',
-    stats: '/stats/',
-    books: '/books/',
-    authors: '/authors/',
+window.booker =
+  api:
+    url: '//api.booker.am'
+    stats: '/stats/'
+    books: '/books/'
+    authors: '/authors/'
     categories: '/categories/'
-  },
   colors: [
     '#1abc9c',
     '#2ecc71',
@@ -20,7 +19,6 @@ window.booker = {
     '#ecf0f1',
     '#95a5a6'
   ],
-}
 
 angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'ngRoute', 'ngSanitize', 'ngAnimate', 'angularFileUpload'] )
   .config [ "$translateProvider", ($translateProvider) ->

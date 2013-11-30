@@ -64,8 +64,3 @@ angular.module( 'bookerApp' )
         
     $scope.search()
     $scope.searchQuery = null
-  .factory 'BooksSearchCtrl', (TheObject) ->
-    service = (obj) ->
-      @obj = obj
-  
-    new service(TheObject)
