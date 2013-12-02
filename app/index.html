@@ -29,9 +29,9 @@
         </div>
         
         <header class="menu-header">
-          <a ng-href="#/books" translate="menu.books"></a>
-          <a ng-href="#/authors" translate="menu.authors"></a>
-          <a ng-href="#/books/add" translate="menu.add"></a>
+          <a ng-href="#/books" ng-click="closeLeft()" translate="menu.books"></a>
+          <a ng-href="#/authors" ng-click="closeLeft()" translate="menu.authors"></a>
+          <a ng-href="#/books/add" ng-click="closeLeft()" translate="menu.add"></a>
         </header>
 
         <div class="menu-stats" ng-controller="StatsCtrl">
@@ -56,6 +56,11 @@
     <div class="splash" ng-controller="BooksSearchCtrl">
       <div class="container">
         <div class="search">
+          <div id="hello" class="hello">
+            <h1>Привет!</h1>
+            <span>Booker.am – лучший способ скачать книгу.</span>
+          </div>
+          
           <form ng-submit="search()">
             <input type="search" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" dynamic-placeholder="{{ 'main.search' | translate }}">
           </form>
@@ -90,6 +95,7 @@
     <script src="components/lodash/dist/lodash.min.js"></script>
     <script src="components/restangular/dist/restangular.min.js"></script>
     <script src="components/ng-file-upload/angular-file-upload.min.js"></script> 
+    <script src="components/angular-local-storage/angular-local-storage.min.js"></script> 
     <!-- endbuild -->
     
     <!-- build:js({.tmp,app}) scripts/languages.js -->

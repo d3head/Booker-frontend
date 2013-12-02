@@ -20,7 +20,7 @@ window.booker =
     '#95a5a6'
   ],
 
-angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'ngRoute', 'ngSanitize', 'ngAnimate', 'angularFileUpload'] )
+angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangular', 'ngRoute', 'ngSanitize', 'ngAnimate', 'angularFileUpload', 'LocalStorageModule'] )
   .config [ "$translateProvider", ($translateProvider) ->
     $translateProvider.translations 'ru',
       lang_ru
@@ -34,3 +34,5 @@ angular.module( 'bookerApp', ['ngCookies', 'pascalprecht.translate', 'restangula
   ], [ (RestangularProvider) ->
     RestangularProvider.setBaseUrl booker.api.url
   ]
+  
+angular.module('LocalStorageModule').value 'prefix', 'Booker'

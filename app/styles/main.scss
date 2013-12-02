@@ -51,7 +51,6 @@ li {
 
 .bookerTitle {
   font-family: $serif;
-
   font-size: 2em;
   font-weight: 300;
   color: rgb( 255, 255, 255 );
@@ -65,7 +64,7 @@ li {
   //background: rgb(0, 174, 239);
   background: $blue;
   color: rgb(255, 255, 255);
-  height: 85px;
+  min-height: 85px;
   padding: 20px 0 30px 0;
   margin-left: -60px;
   font-family: $serif;
@@ -80,6 +79,28 @@ li {
     
     @media (max-width: 767px) {
       max-width: 80%;
+    }
+    
+    .hello {
+      padding: 50px 0 50px 0;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      font-family: $serif;
+      display: none;
+      
+      h1 {
+        font-size: 120px;
+        font-family: $serif !important;
+        padding: 0;
+        margin:  0;
+      }
+      
+      span {
+        font-size: 2em;
+      }
+      
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
     
     input,
@@ -378,4 +399,9 @@ input::-webkit-input-placeholder {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
 }
