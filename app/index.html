@@ -56,18 +56,38 @@
     <div class="splash" ng-controller="BooksSearchCtrl">
       <div class="container">
         <div class="search">
-          <div id="hello" class="hello">
-            <h1>Привет!</h1>
-            <span>Booker.am – лучший способ скачать книгу.</span>
+          <div class="hello">
+            <h1>Промоушен.</h1>
+            <div id="hello">
+              <h1>Привет!</h1>
+              <span>Booker.am – лучший способ скачать книгу.</span>
+            </div>
           </div>
           
-          <form ng-submit="search()">
-            <input type="search" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" dynamic-placeholder="{{ 'main.search' | translate }}">
-          </form>
+          
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-2 col-md-6 col-md-6-offet-3 col-lg-6 col-lg-offset-3">
+              <form ng-submit="search()">
+                <!--<input type="search" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" dynamic-placeholder="{{ 'main.search' | translate }}">-->
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle type" data-toggle="dropdown">Тип <span class="caret"></span></button>
+                    <ul class="dropdown-menu type-link">
+                      <li><a ng-href="#">Книга</a></li>
+                      <li><a href="#">Автор</a></li>
+                      <li><a href="#">Издательство</a></li>
+                      <li><a href="#">Журнал</a></li>
+                    </ul>
+                  </div><!-- /btn-group -->
+                  <input type="text" id="searchQuery" ng-model="searchQuery" class="search-query input-xxlarge" dynamic-placeholder="{{ 'main.search' | translate }}">
+                </div><!-- /input-group -->
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
+    
     <div class="fadein-animate" ng-view ng-cloak></div>
 
     <!-- build:js scripts/jquery.min.js -->
@@ -76,6 +96,7 @@
     <script src="components/classie/classie.js"></script>
     <script src="scripts/js/selectize.min.js"></script>
     <script src="scripts/js/jquery.tipsy.js"></script>
+    <script src="scripts/js/bootstrap.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/angular.min.js -->
